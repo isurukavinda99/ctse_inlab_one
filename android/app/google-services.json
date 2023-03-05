@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "156302826959",
+    "project_id": "ctselab1-f4c1a",
+    "storage_bucket": "ctselab1-f4c1a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:156302826959:android:3699282dddf8867ad5c6ba",
+        "android_client_info": {
+          "package_name": "com.example.ctse_inlab_one"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "156302826959-0vo2r4hgbpkk7454eqsinkorggv44gng.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_Nj5YQ1dE2X6O0quAs8826do6XAKFTFc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "156302826959-0vo2r4hgbpkk7454eqsinkorggv44gng.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
