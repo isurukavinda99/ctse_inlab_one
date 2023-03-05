@@ -27,12 +27,12 @@ class _HomeState extends State<Home> {
         actions: [
           IconButton(
             onPressed: () {
-              Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(builder: (context) {
-                    return Login();
-                  }));
+              Navigator.of(context)
+                  .pushReplacement(MaterialPageRoute(builder: (context) {
+                return Login();
+              }));
             },
-            icon:  Icon(Icons.logout),
+            icon: Icon(Icons.logout),
           ),
         ],
       ),
@@ -45,11 +45,11 @@ class _HomeState extends State<Home> {
               }
               List<Recipies>? listRecipies = snapshot.data;
               return Padding(
-                padding:  EdgeInsets.all(25),
+                padding: EdgeInsets.all(25),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                     Text(
+                    Text(
                       "All Recipies",
                       style: TextStyle(
                         fontSize: 30,
@@ -113,7 +113,8 @@ class _HomeState extends State<Home> {
                                     autofocus: true,
                                     decoration: InputDecoration(
                                       hintText: "Recipe title",
-                                      hintStyle: TextStyle(color: Colors.white70),
+                                      hintStyle:
+                                          TextStyle(color: Colors.white70),
                                       border: InputBorder.none,
                                     ),
                                   ),
@@ -127,7 +128,8 @@ class _HomeState extends State<Home> {
                                     autofocus: true,
                                     decoration: InputDecoration(
                                       hintText: "Description",
-                                      hintStyle: TextStyle(color: Colors.white70),
+                                      hintStyle:
+                                          TextStyle(color: Colors.white70),
                                       border: InputBorder.none,
                                     ),
                                   ),
@@ -141,11 +143,11 @@ class _HomeState extends State<Home> {
                                     autofocus: true,
                                     decoration: const InputDecoration(
                                       hintText: "Ingredients",
-                                      hintStyle: TextStyle(color: Colors.white70),
+                                      hintStyle:
+                                          TextStyle(color: Colors.white70),
                                       border: InputBorder.none,
                                     ),
                                   ),
-
                                   PaddingBox(),
                                   SizedBox(
                                     width: width,
@@ -153,18 +155,21 @@ class _HomeState extends State<Home> {
                                     child: ElevatedButton(
                                       onPressed: () async {
                                         if (recipeTitle.text.isNotEmpty) {
-                                          await RecipiesData()
-                                              .editRecipe(listRecipies[index].id,recipeTitle.text.trim(),recipeDescription.text.trim(),recipeIngredients.text.trim());
+                                          await RecipiesData().editRecipe(
+                                              listRecipies[index].id,
+                                              recipeTitle.text.trim(),
+                                              recipeDescription.text.trim(),
+                                              recipeIngredients.text.trim());
                                           // ignore: use_build_context_synchronously
                                           Navigator.pop(context);
                                         }
                                       },
                                       style: ElevatedButton.styleFrom(
                                         primary: Colors.blue,
-                                        minimumSize:  Size(60, 60),
+                                        minimumSize: Size(60, 60),
                                         elevation: 10,
                                       ),
-                                      child:  Text("Add"),
+                                      child: Text("Add"),
                                     ),
                                   )
                                 ],
@@ -179,17 +184,17 @@ class _HomeState extends State<Home> {
                               color: Colors.black,
                               fontWeight: FontWeight.w600,
                             ),
-
                           ),
-                          title:Text(
-                            listRecipies[index].ingredients +' '+ listRecipies[index].description,
+                          title: Text(
+                            listRecipies[index].ingredients +
+                                ' ' +
+                                listRecipies[index].description,
                             style: TextStyle(
                               fontSize: 25,
                               color: Colors.black,
                               fontWeight: FontWeight.w600,
                             ),
                           ),
-
                           trailing: TextButton(
                             onPressed: () async {
                               await RecipiesData()
@@ -283,7 +288,6 @@ class _HomeState extends State<Home> {
                     border: InputBorder.none,
                   ),
                 ),
-
                 PaddingBox(),
                 SizedBox(
                   width: width,
@@ -291,8 +295,10 @@ class _HomeState extends State<Home> {
                   child: ElevatedButton(
                     onPressed: () async {
                       if (recipeTitle.text.isNotEmpty) {
-                        await RecipiesData()
-                            .addRecipe(recipeTitle.text.trim(),recipeDescription.text.trim(),recipeIngredients.text.trim());
+                        await RecipiesData().addRecipe(
+                            recipeTitle.text.trim(),
+                            recipeDescription.text.trim(),
+                            recipeIngredients.text.trim());
                         // ignore: use_build_context_synchronously
                         Navigator.pop(context);
                       }
@@ -302,7 +308,7 @@ class _HomeState extends State<Home> {
                       minimumSize: Size(60, 60),
                       elevation: 10,
                     ),
-                    child:  Text("Add"),
+                    child: Text("Add"),
                   ),
                 )
               ],
@@ -310,12 +316,11 @@ class _HomeState extends State<Home> {
             context: context,
           );
         },
-        child:  Icon(Icons.add),
+        child: Icon(Icons.add),
       ),
     );
   }
 }
-
 
 class Loader extends StatelessWidget {
   const Loader({Key? key}) : super(key: key);

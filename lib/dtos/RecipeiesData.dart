@@ -3,7 +3,7 @@ import 'package:ctse_inlab_one/dtos/Recipies.dart';
 
 class RecipiesData {
   final CollectionReference recipieCollection =
-  FirebaseFirestore.instance.collection('recipies');
+  FirebaseFirestore.instance.collection('recipiesData');
 
   Future addRecipe(String title, String description, String ingredients) async {
     return await recipieCollection.add({
